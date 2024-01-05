@@ -1,0 +1,11 @@
+[
+    {
+        "IdTarefa": "0001",
+        "Titulo": "Criar Classe Tarefa",
+        "Descicao": "Criar a classe tarefa com suas propriedades e métodos",
+        "Responsavel": "",
+        "PrazoEntrega": "07/01/2024",
+        "Status": 0
+    }
+
+]

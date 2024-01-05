@@ -1,4 +1,5 @@
-﻿using ControleTarefas;
+﻿using GerenciadorDeTarefas.Tarefas;
+using GerenciadorDeTarefas.Usuarios;
 
 namespace GerenciadorDeTarefas
 {
@@ -6,10 +7,21 @@ namespace GerenciadorDeTarefas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            TarefasService tarefaService = new TarefasService();
-            Console.WriteLine(tarefaService.Caminho);
-            //List<Professor> professores = professorService.LerJsonProfessores() ?? new List<Professor>();
+            //TarefasService tarefaService = new TarefasService();
+            //Console.WriteLine(tarefaService.Caminho);
+
+            //GerenciaTarefas gerenciaTarefas = new GerenciaTarefas();
+            //gerenciaTarefas.ExibirTarefas();
+
+
+            //UsuarioService usuarioService = new UsuarioService();
+            //Console.WriteLine(usuarioService.Caminho);
+
+            //GerenciaUsuarios gerenciaUsuarios = new GerenciaUsuarios();
+            //gerenciaUsuarios.ExibirUsuarios();
+
+            Usuario.Login();
+
         }
     }
 }

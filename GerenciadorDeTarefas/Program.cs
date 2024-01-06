@@ -1,4 +1,4 @@
-﻿using GerenciadorDeTarefas.Tarefas;
+﻿using GerenciadorDeTarefas.Tarefas.DadosTarefas;
 using GerenciadorDeTarefas.Usuarios;
 using GerenciadorDeTarefas.Interfaces;
 

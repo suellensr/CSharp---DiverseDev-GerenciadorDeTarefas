@@ -63,23 +63,26 @@ namespace GerenciadorDeTarefas.Usuarios
 
         public static bool BuscarPeloUser(string user)
         {
-            //ReceberUsuarios();
             try
             {
-                foreach (var usuario in Usuarios)
+                if (Usuarios.Any())
                 {
-                    if (usuario.NomeUsuario.Equals(user, StringComparison.OrdinalIgnoreCase))
+                    foreach (var usuario in Usuarios)
                     {
-                        Console.WriteLine($"Existe um usuário cadastrado com esse nome de usuário.");
-                        return true;
-                        break;
+                        if (usuario.NomeUsuario.Equals(user, StringComparison.OrdinalIgnoreCase))
+                        {
+                            Console.WriteLine($"Existe um usuário cadastrado com esse nome de usuário.");
+                            return true;
+                            break;
+                        }
                     }
+                    return false;
                 }
                 return false;
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Erro ao buscar livro por título: {e}");
+                Console.WriteLine($"Erro ao buscar usuário por nome de usuário: {e}");
                 return false;
             }
         }

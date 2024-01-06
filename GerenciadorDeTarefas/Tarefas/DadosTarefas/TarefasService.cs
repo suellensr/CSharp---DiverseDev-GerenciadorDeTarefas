@@ -10,7 +10,8 @@ namespace GerenciadorDeTarefas.Tarefas.DadosTarefas
         public TarefasService(string arquivoJson = "JsonTarefas.json")
         {
             Caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, arquivoJson);
-            Caminho = Caminho.Replace("bin\\Debug\\net8.0", "Tarefas");
+            Caminho = Caminho.Replace("bin\\Debug\\net8.0", "Tarefas\\DadosTarefas");
+            string teste = Caminho;
         }
 
         //LerJasonTarefas retorna uma lista com os objetos do json
@@ -37,7 +38,7 @@ namespace GerenciadorDeTarefas.Tarefas.DadosTarefas
                 return new List<Tarefa>();
             }
         }
-        public void SalvarJsonProfessores(List<Tarefa> tarefas)
+        public void SalvarJsonTarefas(List<Tarefa> tarefas)
         {
             try
             {

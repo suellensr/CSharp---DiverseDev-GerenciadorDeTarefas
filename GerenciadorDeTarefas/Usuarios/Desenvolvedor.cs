@@ -1,4 +1,7 @@
-﻿using GerenciadorDeTarefas.Usuarios.DadosUsuarios;
+﻿using GerenciadorDeTarefas.Interfaces;
+using GerenciadorDeTarefas.Tarefas.DadosTarefas;
+using GerenciadorDeTarefas.Tarefas;
+using GerenciadorDeTarefas.Usuarios.DadosUsuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GerenciadorDeTarefas.Usuarios
 {
-    public class Desenvolvedor: Usuario
+    public class Desenvolvedor : Usuario
     {
         public Desenvolvedor(string id, string nome, string email, string nomeUsuario, string senha, ECargo cargo) : base(id, nome, email, nomeUsuario, senha, ECargo.Desenvolvedor)
         {
@@ -18,36 +21,47 @@ namespace GerenciadorDeTarefas.Usuarios
         {
         }
 
+        GerenciaTarefas gerenciaTarefas = new GerenciaTarefas();
+
         //colocar as classes específicas aqui
 
+        public void AdicionarTarefa(Desenvolvedor desenvolvedor, Usuario usuario)
+        {
+            Console.WriteLine("Digite o título da nova tarefa : ");
+            string? titulo = Console.ReadLine();
 
+            while (string.IsNullOrEmpty(titulo))
+            {
+                Console.WriteLine("O título da tarefa não pode ser vazio. Por favor, digite novamente:");
+                titulo = Console.ReadLine();
+            }
+            //Tratamento para ver se o título da tarefa já existe no sistema
+            if (GerenciaTarefas.BuscarPeloTitulo(titulo) == true)
+            {
+                Console.WriteLine("Não é possível cadastrar outra tarefa com o mesmo título de uma já existente.");
+                Thread.Sleep(1500);
+                Console.Clear();
+                Interface.MenuDesenvolvedor(desenvolvedor, usuario);
+            }
 
+            //Daqui em diante recebe todos os dados necessários para criar uma Tarefa
+            Console.Write("Digite uma descrição para a nova tarefa: ");
+            string? descricao = Console.ReadLine();
 
+            while (string.IsNullOrEmpty(descricao))
+            {
+                Console.Write("O descriçao não pode ser vazio. Por favor, digite novamente: ");
+                descricao = Console.ReadLine();
+            }
+
+            string id = GerenciaTarefas.GerarId();
+            List<Usuario> responsavel = new List<Usuario>();
+            string dataEntrega = "Aguardando definição.";
+            responsavel.Add(usuario);
+            EStatusTarefa status = EStatusTarefa.Analise;
+            string idProjeto = "Aguardando definição.";
+            Tarefa novaTarefa = new Tarefa(id, titulo, descricao, responsavel, dataEntrega, status, idProjeto);
+            gerenciaTarefas.CriarTarefa(novaTarefa);
+        }
     }
 }
-
-
-//Console.WriteLine("O que deseja fazer?");
-//Console.WriteLine("1- Tentar novamente\n2- Voltar ao menu principal\n3- Sair");
-
-//int opcao;
-//while (!int.TryParse(Console.ReadLine(), out opcao))
-//{
-//    Console.Write("Digite o número correspondente à sua escolha: ");
-//}
-
-//switch (opcao)
-//{
-//    case 1:
-//        break;
-//    case 2:
-//        return null;
-//    case 3:
-//        Console.WriteLine("Obrigado por usar nossos serviços. Até mais!");
-//        Environment.Exit(0);
-//        return null;
-//    default:
-//        Console.WriteLine("Número digitado não corresponde a nenhuma das opções.");
-//        break;
-//}
-//            }

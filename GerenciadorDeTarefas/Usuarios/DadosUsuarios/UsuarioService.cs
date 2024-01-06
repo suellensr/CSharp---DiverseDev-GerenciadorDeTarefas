@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GerenciadorDeTarefas.Usuarios
+namespace GerenciadorDeTarefas.Usuarios.DadosUsuarios
 {
     internal class UsuarioService
     {
@@ -14,7 +14,7 @@ namespace GerenciadorDeTarefas.Usuarios
         public UsuarioService(string arquivoJson = "JsonUsuarios.json")
         {
             Caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, arquivoJson);
-            Caminho = Caminho.Replace("bin\\Debug\\net8.0", "Usuarios");
+            Caminho = Caminho.Replace("bin\\Debug\\net8.0", "Usuarios\\DadosUsuarios");
         }
 
         //LerJasonTarefas retorna uma lista com os objetos do json
@@ -41,7 +41,7 @@ namespace GerenciadorDeTarefas.Usuarios
                 return new List<Usuario>();
             }
         }
-        public void SalvarJsonProfessores(List<Tarefa> usuarios)
+        public void SalvarJsonUsuario(List<Usuario> usuarios)
         {
             try
             {

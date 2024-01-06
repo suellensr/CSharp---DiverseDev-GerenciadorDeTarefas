@@ -1,4 +1,4 @@
-﻿namespace Usuarios
+﻿namespace GerenciadorDeTarefas.Usuarios.DadosUsuarios
 {
     public enum ECargo
     {

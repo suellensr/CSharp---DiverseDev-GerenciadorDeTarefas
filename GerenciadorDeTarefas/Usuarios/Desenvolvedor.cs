@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerenciadorDeTarefas.Usuarios.DadosUsuarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,22 @@ using System.Threading.Tasks;
 
 namespace GerenciadorDeTarefas.Usuarios
 {
-    internal class Desenvolvedor
+    public class Desenvolvedor: Usuario
     {
+        public Desenvolvedor(string nome, string email, string nomeUsuario, string senha, ECargo cargo) : base(nome, email, nomeUsuario, senha, ECargo.Desenvolvedor)
+        {
+        }
+
+        public Desenvolvedor(Usuario usuario)
+        : base(usuario.Nome, usuario.Email, usuario.NomeUsuario, usuario.Senha, usuario.Cargo)
+        {
+        }
+
+        //colocar as classes específicas aqui
+
+
+
+
     }
 }
 

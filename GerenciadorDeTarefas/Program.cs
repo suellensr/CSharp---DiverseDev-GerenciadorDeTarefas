@@ -1,5 +1,6 @@
 ﻿using GerenciadorDeTarefas.Tarefas;
 using GerenciadorDeTarefas.Usuarios;
+using GerenciadorDeTarefas.Interfaces;
 
 namespace GerenciadorDeTarefas
 {
@@ -20,8 +21,13 @@ namespace GerenciadorDeTarefas
             //GerenciaUsuarios gerenciaUsuarios = new GerenciaUsuarios();
             //gerenciaUsuarios.ExibirUsuarios();
 
-            Usuario.Login();
 
+            Interface.FazerLogin();
+
+            //Usuario usuario = new Usuario("Julia Barbosa","juliab@example.com", "juliab", "12345@", Usuarios.DadosUsuarios.ECargo.TechLead);
+            //TechLead techLead = new TechLead("Julia Barbosa", "juliab@example.com", "juliab", "12345@", Usuarios.DadosUsuarios.ECargo.TechLead);
+            //techLead.AdicionarUsuario(usuario);
+          
         }
     }
 }

@@ -9,12 +9,12 @@ namespace GerenciadorDeTarefas.Usuarios
 {
     public class Desenvolvedor: Usuario
     {
-        public Desenvolvedor(string nome, string email, string nomeUsuario, string senha, ECargo cargo) : base(nome, email, nomeUsuario, senha, ECargo.Desenvolvedor)
+        public Desenvolvedor(string id, string nome, string email, string nomeUsuario, string senha, ECargo cargo) : base(id, nome, email, nomeUsuario, senha, ECargo.Desenvolvedor)
         {
         }
 
         public Desenvolvedor(Usuario usuario)
-        : base(usuario.Nome, usuario.Email, usuario.NomeUsuario, usuario.Senha, usuario.Cargo)
+        : base(usuario.IdUsuario, usuario.Nome, usuario.Email, usuario.NomeUsuario, usuario.Senha, usuario.Cargo)
         {
         }
 

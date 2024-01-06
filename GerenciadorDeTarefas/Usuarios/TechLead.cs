@@ -10,16 +10,16 @@ namespace GerenciadorDeTarefas.Usuarios
 {
     public class TechLead: Usuario
     {
-        public TechLead(string nome, string email, string nomeUsuario, string senha, ECargo cargo) : base(nome, email, nomeUsuario, senha, ECargo.TechLead)
+        public TechLead(string id, string nome, string email, string nomeUsuario, string senha, ECargo cargo) : base(id, nome, email, nomeUsuario, senha, ECargo.TechLead)
         {
         }
         public TechLead(Usuario usuario)
-        : base(usuario.Nome, usuario.Email, usuario.NomeUsuario, usuario.Senha, usuario.Cargo)
+        : base(usuario.IdUsuario, usuario.Nome, usuario.Email, usuario.NomeUsuario, usuario.Senha, usuario.Cargo)
         {
         }
 
         GerenciaUsuarios gerenciaUsuarios = new GerenciaUsuarios();
-        private Usuario usuario;
+        //private Tarefa usuario;
 
         public void AdicionarUsuario(TechLead techLead)
         {
@@ -59,9 +59,10 @@ namespace GerenciadorDeTarefas.Usuarios
                 email = Console.ReadLine();
             }
 
+            string id = GerenciaUsuarios.GerarId();
             string senhaPadrao = "12345@";
             ECargo cargo = ECargo.Desenvolvedor;
-            Usuario novoUsuario = new Usuario(nome, email, nomeUsuario, senhaPadrao, cargo);
+            Usuario novoUsuario = new Usuario(id,nome, email, nomeUsuario, senhaPadrao, cargo);
             gerenciaUsuarios.CriarUsuario(novoUsuario);
         }
 

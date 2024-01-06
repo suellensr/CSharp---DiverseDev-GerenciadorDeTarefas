@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace GerenciadorDeTarefas.Tarefas
+namespace GerenciadorDeTarefas.Tarefas.DadosTarefas
 {
     public class TarefasService
     {

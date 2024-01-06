@@ -12,7 +12,6 @@ namespace GerenciadorDeTarefas.Usuarios
 {
     public class Usuario
     {
-        private static int contadorId = 1;
         public string? IdUsuario { get; set; }
         public string? Nome { get; set; }
         public string? Email { get; set; }
@@ -20,9 +19,9 @@ namespace GerenciadorDeTarefas.Usuarios
         public string? Senha { get; set; }
         public ECargo Cargo { get; set; }
 
-        public Usuario(string nome, string email, string nomeUsuario, string senha, ECargo cargo)
+        public Usuario(string id, string nome, string email, string nomeUsuario, string senha, ECargo cargo)
         {
-            IdUsuario = contadorId++.ToString().PadLeft(5, '0');
+            IdUsuario = id;
             Nome = nome;
             Email = email;
             NomeUsuario = nomeUsuario;
@@ -34,12 +33,11 @@ namespace GerenciadorDeTarefas.Usuarios
 
 }
 
-        
 
-        
-        //Criar um Exibir Lista de Funcionários e exibir só Id, Nome e email
-        //Criar um busca Por nome
 
-        //usar o geradorDeId para quando for criar um novo usuario
-        //quando for criar novo funcionário, forçar o cargo para desenvolvedor
 
+//Criar um Exibir Lista de Funcionários e exibir só Id, Nome e email
+//Criar um busca Por nome
+
+//usar o geradorDeId para quando for criar um novo usuario
+//quando for criar novo funcionário, forçar o cargo para desenvolvedor

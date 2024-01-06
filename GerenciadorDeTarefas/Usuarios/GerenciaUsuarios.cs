@@ -11,7 +11,6 @@ namespace GerenciadorDeTarefas.Usuarios
     internal class GerenciaUsuarios
     {
         public static List<Usuario>? Usuarios { get; set; } = new List<Usuario>();
-        //private static int contadorId = 0;
 
         UsuarioService usuarioService = new UsuarioService();
 
@@ -26,20 +25,33 @@ namespace GerenciadorDeTarefas.Usuarios
             return Usuarios;
         }
 
-        //public static string GerarId()
-        //{
-        //    contadorId++;
-        //    if (contadorId > 99999)
-        //    {
-        //        throw new InvalidOperationException("Limite de IDs alcançado");
-        //    }
+        public static string GerarId()
+        {
+            int contadorId;
+            if (Usuarios.Any())
+            {
+                Usuario ultimoUsuario = Usuarios.Last();
+                contadorId = int.Parse(ultimoUsuario.IdUsuario);
+            }
+            else
+            {
+                contadorId = 0;
+            }
+            
+            if (contadorId > 99999)
+            {
+                throw new InvalidOperationException("Limite de IDs alcançado");
+            }
+            else
+            {
+                contadorId++;
+            }
 
-        //    return contadorId.ToString().PadLeft(5, '0');
-        //}
+            return contadorId.ToString().PadLeft(5, '0');
+        }
 
         public void ExibirUsuarios() //Essa função eu posso passar para Usuário e exibir só um deles
         {
-            //ReceberUsuarios();
             foreach (var usuario in Usuarios)
             {
                 Console.WriteLine(usuario.IdUsuario);

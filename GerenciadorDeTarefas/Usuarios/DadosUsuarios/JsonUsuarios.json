@@ -1,13 +1,5 @@
 [
   {
-    "IdUsuario": "00000",
-    "Nome": "Admin",
-    "Email": "Admin",
-    "NomeUsuario": "admin",
-    "Senha": "admin",
-    "Cargo": 1
-  },
-  {
     "IdUsuario": "00001",
     "Nome": "Julia Barbosa",
     "Email": "juliab@example.com",
@@ -16,7 +8,7 @@
     "Cargo": 1
   },
   {
-    "IdUsuario": "00004",
+    "IdUsuario": "00002",
     "Nome": "Jonas Lemos",
     "Email": "jonasl@example.com",
     "NomeUsuario": "jonasl",
@@ -24,18 +16,18 @@
     "Cargo": 2
   },
   {
-    "IdUsuario": "00005",
-    "Nome": "Fabiana Silva",
-    "Email": "fabianas@example.com",
-    "NomeUsuario": "fabianas",
+    "IdUsuario": "00003",
+    "Nome": "Eduarda Fonseca",
+    "Email": "eduardaf@example.com",
+    "NomeUsuario": "eduardaf",
     "Senha": "12345@",
     "Cargo": 2
   },
   {
-    "IdUsuario": "00010",
-    "Nome": "Diana Santos",
-    "Email": "dianas@example.com",
-    "NomeUsuario": "dianas",
+    "IdUsuario": "00004",
+    "Nome": "Douglas Vieira",
+    "Email": "douglasv",
+    "NomeUsuario": "douglasv",
     "Senha": "12345@",
     "Cargo": 2
   }

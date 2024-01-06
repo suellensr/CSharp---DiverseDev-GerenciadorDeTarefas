@@ -1,4 +1,4 @@
-﻿namespace GerenciadorDeTarefas.Tarefas
+﻿namespace GerenciadorDeTarefas.Tarefas.DadosTarefas
 {
     public enum EStatusTarefa
     {

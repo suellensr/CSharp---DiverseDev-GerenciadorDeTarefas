@@ -75,16 +75,17 @@ namespace GerenciadorDeTarefas.Interfaces
                     if (usuario.Cargo == ECargo.TechLead)
                     {
 
-                       TechLead techLead = new TechLead(usuario);                        
+                        TechLead techLead = new TechLead(usuario);                        
                         Thread.Sleep(1500);
                         Console.Clear();
                         MenuTechLead(techLead);
                     }
                     else
                     {
+                        Desenvolvedor desenvolvedor = new Desenvolvedor(usuario);
                         Thread.Sleep(1500);
                         Console.Clear();
-                        MenuDesenvolvedor(usuario);
+                        MenuDesenvolvedor(desenvolvedor);
                     }
                 }
                 else
@@ -126,11 +127,11 @@ namespace GerenciadorDeTarefas.Interfaces
             }
         }
 
-    public static void MenuDesenvolvedor(Usuario usuario)
+    public static void MenuDesenvolvedor(Desenvolvedor desenvolvedor)
         {
             Console.WriteLine("SISTEMA DE GERENCIAMENTO DE TAREFAS");
             Console.WriteLine("____________________________________");
-            Console.WriteLine($"Olá, {usuario.NomeUsuario}!");
+            Console.WriteLine($"Olá, {desenvolvedor.NomeUsuario}!");
             Console.WriteLine("O que você deseja fazer?");
             Console.WriteLine("1- Ver minhas tarefas\n2- Criar tarefa\n3- Sair");
         }

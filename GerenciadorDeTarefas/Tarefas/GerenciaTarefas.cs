@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GerenciadorDeTarefas.Tarefas.DadosTarefas;
+using GerenciadorDeTarefas.Usuarios.DadosUsuarios;
+using GerenciadorDeTarefas.Usuarios;
 
 namespace GerenciadorDeTarefas.Tarefas
 {
@@ -16,11 +19,35 @@ namespace GerenciadorDeTarefas.Tarefas
             Tarefas = tarefasService.LerJsonTarefas();
         }
 
-        //public List<Tarefa> ReceberListaTarefas()
-        //{
-        //    Tarefas = tarefasService.LerJsonTarefas();
-        //    return Tarefas;
-        //}
+        public List<Tarefa> ReceberListaTarefas()
+        {
+            return Tarefas;
+        }
+
+        public static string GerarId()
+        {
+            int contadorId;
+            if (Tarefas.Any())
+            {
+                Tarefa ultimaTarefa = Tarefas.Last();
+                contadorId = int.Parse(ultimaTarefa.IdTarefa);
+            }
+            else
+            {
+                contadorId = 0;
+            }
+
+            if (contadorId > 99999)
+            {
+                throw new InvalidOperationException("Limite de IDs alcançado");
+            }
+            else
+            {
+                contadorId++;
+            }
+
+            return contadorId.ToString().PadLeft(5, '0');
+        }
 
         public void ExibirTarefas()
         {

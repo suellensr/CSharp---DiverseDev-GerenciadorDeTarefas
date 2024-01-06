@@ -85,7 +85,7 @@ namespace GerenciadorDeTarefas.Interfaces
                         Desenvolvedor desenvolvedor = new Desenvolvedor(usuario);
                         Thread.Sleep(1500);
                         Console.Clear();
-                        MenuDesenvolvedor(desenvolvedor);
+                        MenuDesenvolvedor(desenvolvedor, usuario);
                     }
                 }
                 else
@@ -117,6 +117,7 @@ namespace GerenciadorDeTarefas.Interfaces
                     techLead.AdicionarUsuario(techLead);
                     Console.WriteLine($"\nPrecione [ENTER] para voltar");
                     Console.ReadLine();
+                    Console.Clear();
                     MenuTechLead(techLead);
                     return;
 
@@ -127,13 +128,35 @@ namespace GerenciadorDeTarefas.Interfaces
             }
         }
 
-    public static void MenuDesenvolvedor(Desenvolvedor desenvolvedor)
+    public static void MenuDesenvolvedor(Desenvolvedor desenvolvedor, Usuario usuario)
         {
             Console.WriteLine("SISTEMA DE GERENCIAMENTO DE TAREFAS");
             Console.WriteLine("____________________________________");
             Console.WriteLine($"Olá, {desenvolvedor.NomeUsuario}!");
             Console.WriteLine("O que você deseja fazer?");
             Console.WriteLine("1- Ver minhas tarefas\n2- Criar tarefa\n3- Sair");
+
+            int opcao;
+            while (!int.TryParse(Console.ReadLine(), out opcao) || opcao < 1 || opcao > 7)
+            {
+                Console.Write("Digite o número correspondente a opção desejada: ");
+            }
+
+            switch (opcao)
+            {
+                case 2:
+                    desenvolvedor.AdicionarTarefa(desenvolvedor, usuario);
+                    Console.WriteLine($"\nPrecione [ENTER] para voltar");
+                    Console.ReadLine();
+                    Console.Clear();
+                    MenuDesenvolvedor(desenvolvedor, usuario);
+                    return;
+
+                default:
+                    Console.WriteLine("Número digitado não corresponde a nenhuma das opções");
+                    MenuDesenvolvedor(desenvolvedor, usuario);
+                    return;
+            }
         }
     }
 }

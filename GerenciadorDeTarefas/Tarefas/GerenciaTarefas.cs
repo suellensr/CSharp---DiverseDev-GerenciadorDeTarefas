@@ -49,7 +49,7 @@ namespace GerenciadorDeTarefas.Tarefas
             return contadorId.ToString().PadLeft(5, '0');
         }
 
-        public void ExibirTarefas()
+        public void ExibirTarefas() //Definir se fai ficar
         {
             //ReceberListaTarefas();
             foreach (var tarefa in Tarefas)
@@ -63,30 +63,37 @@ namespace GerenciadorDeTarefas.Tarefas
             }
         }
 
-        //public void AdicionarTarefas()
-        //{
+        public static bool BuscarPeloTitulo(string titulo)
+        {
+            try
+            {
+                if (Tarefas.Any())
+                {
+                    foreach (var tarefa in Tarefas)
+                    {
+                        if (tarefa.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase))
+                        {
+                            Console.WriteLine($"Existe um usuário cadastrado com esse nome de usuário.");
+                            return true;
+                            break;
+                        }
+                    }
+                    return false;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Erro ao buscar tarefa por título: {e}");
+                return false;
+            }
+        }
 
-        //}
-
-        //public void CriarLivro(Livro novoLivro)
-        //{
-        //    try
-        //    {
-        //        if (VerificaSeLivroJaExiste(novoLivro))
-        //            Console.WriteLine("Este livro já existe no sistema.");
-        //        else
-        //        {
-        //            List<Livro> Livros = DeserializaJSON();
-        //            Livros.Add(novoLivro);
-        //            SerializaJSON(Livros);
-        //            Console.WriteLine("Livro criado com sucesso.");
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine($"Não foi possível criar um livro: {e}");
-        //    }
-        //}
+        public void CriarTarefa(Tarefa novaTarefa)
+        {
+            Tarefas.Add(novaTarefa);
+            tarefasService.SalvarJsonTarefas(Tarefas);
+        }
 
     }
-}
+                }

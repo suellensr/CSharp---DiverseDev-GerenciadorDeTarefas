@@ -1,11 +1,56 @@
 [
-    {
-        "IdTarefa": "0001",
-        "Titulo": "Criar Classe Tarefa",
-        "Descicao": "Criar a classe tarefa com suas propriedades e métodos",
-        "Responsavel": "",
-        "PrazoEntrega": "07/01/2024",
-        "Status": 0
-    }
-
+  {
+    "IdTarefa": "00001",
+    "Titulo": "Um teste",
+    "Descricao": "Testando",
+    "Responsavel": [
+      {
+        "IdUsuario": "00002",
+        "Nome": "Jonas Lemos",
+        "Email": "jonasl@example.com",
+        "NomeUsuario": "jonasl",
+        "Senha": "12345@",
+        "Cargo": 2
+      }
+    ],
+    "DataEntrega": "Aguardando definição.",
+    "Status": 0,
+    "IdProjetoPertencente": "Aguardando definição."
+  },
+  {
+    "IdTarefa": "00002",
+    "Titulo": "Mais um teste",
+    "Descricao": "Vamos conferir se realmente foi",
+    "Responsavel": [
+      {
+        "IdUsuario": "00003",
+        "Nome": "Eduarda Fonseca",
+        "Email": "eduardaf@example.com",
+        "NomeUsuario": "eduardaf",
+        "Senha": "12345@",
+        "Cargo": 2
+      }
+    ],
+    "DataEntrega": "Aguardando definição.",
+    "Status": 0,
+    "IdProjetoPertencente": "Aguardando definição."
+  },
+  {
+    "IdTarefa": "00003",
+    "Titulo": "Vamos chorar",
+    "Descricao": "To desesperada então bora chorar",
+    "Responsavel": [
+      {
+        "IdUsuario": "00003",
+        "Nome": "Eduarda Fonseca",
+        "Email": "eduardaf@example.com",
+        "NomeUsuario": "eduardaf",
+        "Senha": "12345@",
+        "Cargo": 2
+      }
+    ],
+    "DataEntrega": "Aguardando definição.",
+    "Status": 0,
+    "IdProjetoPertencente": "Aguardando definição."
+  }
 ]

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GerenciadorDeTarefas.Tarefas;
+using GerenciadorDeTarefas.Tarefas.DadosTarefas;
 
 namespace GerenciadorDeTarefas.Usuarios
 {
@@ -19,6 +21,7 @@ namespace GerenciadorDeTarefas.Usuarios
         }
 
         GerenciaUsuarios gerenciaUsuarios = new GerenciaUsuarios();
+        GerenciaTarefas gerenciaTarefas = new GerenciaTarefas();
         //private Tarefa usuario;
 
         public void AdicionarUsuario(TechLead techLead)
@@ -66,24 +69,52 @@ namespace GerenciadorDeTarefas.Usuarios
             gerenciaUsuarios.CriarUsuario(novoUsuario);
         }
 
-        //public void CriarLivro(Livro novoLivro)
+        //public void AdicionarTarefa(TechLead techLead)
         //{
-        //    try
+        //    Console.WriteLine("Digite o título da nova tarefa : ");
+        //    string? titulo = Console.ReadLine();
+
+        //    while (string.IsNullOrEmpty(titulo))
         //    {
-        //        if (VerificaSeLivroJaExiste(novoLivro))
-        //            Console.WriteLine("Este livro já existe no sistema.");
-        //        else
-        //        {
-        //            List<Livro> Livros = DeserializaJSON();
-        //            Livros.Add(novoLivro);
-        //            SerializaJSON(Livros);
-        //            Console.WriteLine("Livro criado com sucesso.");
-        //        }
+        //        Console.WriteLine("O título da tarefa não pode ser vazio. Por favor, digite novamente:");
+        //        titulo = Console.ReadLine();
         //    }
-        //    catch (Exception e)
+        //    //Tratamento para ver se o título da tarefa já existe no sistema
+        //    if (GerenciaTarefas.BuscarPeloTitulo(titulo) == true)
         //    {
-        //        Console.WriteLine($"Não foi possível criar um livro: {e}");
+        //        Console.WriteLine("Não é possível cadastrar outra tarefa com o mesmo título de uma já existente.");
+        //        Thread.Sleep(1500);
+        //        Console.Clear();
+        //        Interface.MenuTechLead(techLead);
         //    }
+
+        //    //Daqui em diante recebe todos os dados necessários para criar uma Tarefa
+        //    Console.Write("Digite uma descrição para a nova tarefa: ");
+        //    string? descricao = Console.ReadLine();
+
+        //    while (string.IsNullOrEmpty(descricao))
+        //    {
+        //        Console.Write("O descriçao não pode ser vazio. Por favor, digite novamente: ");
+        //        descricao = Console.ReadLine();
+        //    }
+            
+        //    //criar uma pergunta de quantos responsáveis serão
+        //    //fazer um laço for para receber o user dos responsáveis
+        //    //criar uma busca que retorne um usuário pelo user
+        //    //acrescentar o user na List responsáveis
+
+
+        //    //Perguntar qual será o prazo de execução
+        //    //a data recebe um datetime now e acrescenta o prazo acima igual na senha professor
+
+        //    Console.Write("Qual o id do projeto que a tarefa pertence: ");
+        //    int? idProjeto = Console.ReadLine();
+        //    // colocar pra conferir se é um número e converter p os 000 no começo
+
+        //    string id = GerenciaTarefas.GerarId();
+        //    EStatusTarefa status = EStatusTarefa.Desenvolvimento;
+        //    Tarefa novaTarefa = new Tarefa(id, titulo, descricao, responsavel, dataEntrega, status, idProjeto);
+        //    gerenciaTarefas.CriarTarefa(novaTarefa);
         //}
 
 

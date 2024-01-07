@@ -110,9 +110,17 @@ namespace GerenciadorDeTarefas.Interfaces
             {
                 Console.Write("Digite o número correspondente a opção desejada: ");
             }
-
+            
             switch (opcao)
             {
+                case 2:
+                    techLead.AdicionarTarefa(techLead);
+                    Console.WriteLine($"\nPrecione [ENTER] para voltar");
+                    Console.ReadLine();
+                    Console.Clear();
+                    MenuTechLead(techLead);
+                    return;
+
                 case 6:
                     techLead.AdicionarUsuario(techLead);
                     Console.WriteLine($"\nPrecione [ENTER] para voltar");

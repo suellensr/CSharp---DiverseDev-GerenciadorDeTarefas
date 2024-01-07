@@ -61,7 +61,7 @@ namespace GerenciadorDeTarefas.Usuarios
             }
         }
 
-        public static bool BuscarPeloUser(string user)
+        public static bool VerificarUsuarioExiste(string user)
         {
             try
             {
@@ -71,7 +71,6 @@ namespace GerenciadorDeTarefas.Usuarios
                     {
                         if (usuario.NomeUsuario.Equals(user, StringComparison.OrdinalIgnoreCase))
                         {
-                            Console.WriteLine($"Existe um usuário cadastrado com esse nome de usuário.");
                             return true;
                             break;
                         }
@@ -91,6 +90,21 @@ namespace GerenciadorDeTarefas.Usuarios
         {
             Usuarios.Add(novoUsuario);
             usuarioService.SalvarJsonUsuario(Usuarios);
+        }
+
+
+        public static Usuario BuscarPeloUser(string user)
+        {
+            foreach (var usuario in Usuarios)
+            {
+                if (usuario.NomeUsuario.Equals(user, StringComparison.OrdinalIgnoreCase))
+                {
+                    Usuario usuarioEncontrado = usuario;
+                    return usuarioEncontrado;
+                    break;
+                }
+            }
+            return new Usuario(null, null, null, null, null, ECargo.Desenvolvedor);
         }
 
     }

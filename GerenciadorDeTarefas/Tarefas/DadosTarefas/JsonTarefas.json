@@ -13,9 +13,9 @@
         "Cargo": 2
       }
     ],
-    "DataEntrega": "Aguardando definição.",
-    "Status": 0,
-    "IdProjetoPertencente": "Aguardando definição."
+    "DataEntrega": "17/01/2024",
+    "Status": 1,
+    "IdProjetoPertencente": "00001"
   },
   {
     "IdTarefa": "00002",
@@ -32,7 +32,25 @@
       }
     ],
     "DataEntrega": "Aguardando definição.",
-    "Status": 0,
+    "Status": 6,
     "IdProjetoPertencente": "Aguardando definição."
+  },
+  {
+    "IdTarefa": "00003",
+    "Titulo": "Cade você",
+    "Descricao": "Descobrir onde vc está",
+    "Responsavel": [
+      {
+        "IdUsuario": "00002",
+        "Nome": "Jonas Lemos",
+        "Email": "jonasl@example.com",
+        "NomeUsuario": "jonasl",
+        "Senha": "12345@",
+        "Cargo": 2
+      }
+    ],
+    "DataEntrega": "09/01/2024",
+    "Status": 1,
+    "IdProjetoPertencente": "00002"
   }
 ]

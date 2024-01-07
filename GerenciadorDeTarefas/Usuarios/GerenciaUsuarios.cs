@@ -37,7 +37,7 @@ namespace GerenciadorDeTarefas.Usuarios
             {
                 contadorId = 0;
             }
-            
+
             if (contadorId > 99999)
             {
                 throw new InvalidOperationException("Limite de IDs alcançado");
@@ -50,15 +50,14 @@ namespace GerenciadorDeTarefas.Usuarios
             return contadorId.ToString().PadLeft(5, '0');
         }
 
-        public void ExibirUsuarios() //Essa função eu posso passar para Usuário e exibir só um deles
+        public static void ExibirUsuario(Usuario usuario)
         {
-            foreach (var usuario in Usuarios)
-            {
-                Console.WriteLine(usuario.IdUsuario);
-                Console.WriteLine(usuario.Nome);
-                Console.WriteLine(usuario.Email);
-                Console.WriteLine(usuario.Cargo);
-            }
+            Console.WriteLine($"IdUsuario: {usuario.IdUsuario}");
+            Console.WriteLine($"Nome: {usuario.Nome}");
+            Console.WriteLine($"Usuário: {usuario.NomeUsuario}");
+            Console.WriteLine($"E-mail: {usuario.Email}");
+            Console.WriteLine($"Cargo: {usuario.Cargo}");
+            Console.WriteLine();
         }
 
         public static bool VerificarUsuarioExiste(string user)

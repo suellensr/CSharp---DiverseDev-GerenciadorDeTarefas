@@ -28,6 +28,8 @@ namespace GerenciadorDeTarefas.Usuarios
             Senha = senha;
             Cargo = cargo;
         }
+
+        
     }
 
 

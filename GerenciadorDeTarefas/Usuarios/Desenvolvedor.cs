@@ -63,9 +63,27 @@ namespace GerenciadorDeTarefas.Usuarios
             Tarefa novaTarefa = new Tarefa(id, titulo, descricao, responsavel, dataEntrega, status, idProjeto);
             gerenciaTarefas.CriarTarefa(novaTarefa);
         }
+
+        //Acho que para esse caso, vai ser mais fácil criar projeto e puxar todos as tarefas onde ele estiver presente
+
+        //public void VerTarefas(Desenvolvedor desenvolvedor)
+        //{
+        //    List<Tarefa> listaTarefas = new List<Tarefa>();
+        //    listaTarefas = gerenciaTarefas.ReceberListaTarefas();
+        //    List<Tarefa> tarefasUsuario = new List<Tarefa>();
+        //    foreach(var tarefa in listaTarefas)
+        //    {
+        //        foreach(var reponsavel in tarefa.Responsavel)
+        //        {
+        //            if (desenvolvedor.IdUsuario == reponsavel.IdUsuario)
+
+        //        }
+
+        //    }
+
+
+        //    gerenciaTarefas.ExibirTarefas(listaTarefas);
+        //}
+
     }
 }
-//        Console.WriteLine("Número digitado não corresponde a nenhuma das opções.");
-//        break;
-//}
-//            }

@@ -113,8 +113,24 @@ namespace GerenciadorDeTarefas.Interfaces
             
             switch (opcao)
             {
+                case 1:
+                    techLead.VerTarefas();
+                    Console.WriteLine($"\nPrecione [ENTER] para voltar");
+                    Console.ReadLine();
+                    Console.Clear();
+                    MenuTechLead(techLead);
+                    return;
+
                 case 2:
                     techLead.AdicionarTarefa(techLead);
+                    Console.WriteLine($"\nPrecione [ENTER] para voltar");
+                    Console.ReadLine();
+                    Console.Clear();
+                    MenuTechLead(techLead);
+                    return;
+
+                case 4:
+                    techLead.AnalisarTarefas();
                     Console.WriteLine($"\nPrecione [ENTER] para voltar");
                     Console.ReadLine();
                     Console.Clear();

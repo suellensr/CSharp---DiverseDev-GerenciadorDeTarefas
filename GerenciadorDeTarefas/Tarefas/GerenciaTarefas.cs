@@ -49,18 +49,21 @@ namespace GerenciadorDeTarefas.Tarefas
             return contadorId.ToString().PadLeft(5, '0');
         }
 
-        public void ExibirTarefas() //Definir se fai ficar
+        public void ExibirTarefa(Tarefa tarefa)
         {
-            //ReceberListaTarefas();
-            foreach (var tarefa in Tarefas)
+
+            Console.WriteLine($"IdTarefa: {tarefa.IdTarefa}");
+            Console.WriteLine($"Título: {tarefa.Titulo}");
+            Console.WriteLine($"Descrição: {tarefa.Descricao}");
+            Console.WriteLine("Responsáveis: ");
+            foreach (Usuario usuario in tarefa.Responsavel)
             {
-                Console.WriteLine(tarefa.IdTarefa);
-                Console.WriteLine(tarefa.Titulo);
-                Console.WriteLine(tarefa.Descricao);
-                Console.WriteLine(tarefa.Responsavel);
-                Console.WriteLine(tarefa.DataEntrega);
-                Console.WriteLine(tarefa.Status);
+                GerenciaUsuarios.ExibirUsuario(usuario);
             }
+            Console.WriteLine($"Data da Entrega: {tarefa.DataEntrega}");
+            Console.WriteLine($"Status: {tarefa.Status}");
+            Console.WriteLine();
+
         }
 
         public static bool BuscarPeloTitulo(string titulo)
@@ -96,4 +99,4 @@ namespace GerenciadorDeTarefas.Tarefas
         }
 
     }
-                }
+}

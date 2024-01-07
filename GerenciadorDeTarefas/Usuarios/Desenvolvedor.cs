@@ -56,8 +56,8 @@ namespace GerenciadorDeTarefas.Usuarios
 
             string id = GerenciaTarefas.GerarId();
             List<Usuario> responsavel = new List<Usuario>();
-            string dataEntrega = "Aguardando definição.";
             responsavel.Add(usuario);
+            string dataEntrega = "Aguardando definição.";
             EStatusTarefa status = EStatusTarefa.Analise;
             string idProjeto = "Aguardando definição.";
             Tarefa novaTarefa = new Tarefa(id, titulo, descricao, responsavel, dataEntrega, status, idProjeto);
@@ -65,3 +65,7 @@ namespace GerenciadorDeTarefas.Usuarios
         }
     }
 }
+//        Console.WriteLine("Número digitado não corresponde a nenhuma das opções.");
+//        break;
+//}
+//            }
